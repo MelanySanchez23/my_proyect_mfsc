@@ -7,10 +7,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('API CRUD - NestJS')
-    .setDescription('Documentación de la API CRUD')
-    .setVersion('1.0')
-    .build();
+  .setTitle('API Usuarios')
+  .setDescription('API de autenticación con JWT')
+  .setVersion('1.0')
+  .addBearerAuth()
+  .build();
 
   const document = SwaggerModule.createDocument(app, config);
 
